@@ -1,0 +1,33 @@
+version: '3'
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:12
+    env_file:
+      - .env
+    depends_on:
+      - pgadmin
+    environment:
+      POSTGRES_USER: "bidjandy"
+      POSTGRES_PASSWORD: "&hM204287h!7"
+      POSTGRES_DB: fronttest
+      PG_DATA: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "ali.bidjandy@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "54di91mG&Nn5"
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - "1242:80"
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+volumes:
+  pgdata:
+  pgadmin:

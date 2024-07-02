@@ -1,0 +1,5 @@
+{
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": false,
+  "editor.semanticHighlighting.enabled": "configuredByTheme"
+}
